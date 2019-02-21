@@ -27,4 +27,17 @@ const updateObj = {
   bizz: 'coding',
   bang: 'JS',
 };
-console.log(updateObject(updateObj));
+//console.log(updateObject(updateObj));
+
+function personMaker() {
+  const person = {
+    firstName: 'Paul',
+    lastName: 'Jones',
+    fullName: function() {
+      return `${this.firstName} ${this.lastName}`;
+    }
+  };
+  return person;
+}
+
+//console.log(personMaker());
