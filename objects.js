@@ -313,14 +313,19 @@ testIt();*/
 // console.log('Water:', loaf.water);
 // console.log('Hydration:', loaf.hydration());
 
-const object1 = {
-  foo: 'hello',
-  bar: 'world',
-  fum: 'hi',
-  quux: 'what is up',
-  spam: 'food',
-};
+// const object1 = {
+//   foo: 'hello',
+//   bar: 'world',
+//   fum: 'hi',
+//   quux: 'what is up',
+//   spam: 'food',
+// };
 
-for (const key in object1) {
-  console.log(key, object1[key]);
-}
+// for (const key in object1) {
+//   console.log(key, object1[key]);
+// }
+
+// const hobbit = {
+//   meals:['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+// };
+// console.log(hobbit.meals[3]);
