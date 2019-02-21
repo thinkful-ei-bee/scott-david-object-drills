@@ -329,3 +329,26 @@ testIt();*/
 //   meals:['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
 // };
 // console.log(hobbit.meals[3]);
+
+/*const employees = [{
+  name: 'Scott',
+  jobTitle: 'software developer',
+},
+{
+  name: 'Jim',
+  jobTitle: 'plumber',
+  boss: 'Rich',
+},
+{
+  name: 'Mike',
+  jobTitle: 'mechanic',
+  boss: 'Joe',
+}];
+
+for (let i = 0; i < employees.length; i++) {
+  if (!employees.boss) {
+    console.log(`${employees[i].jobTitle} ${employees[i].name} doesn't report to anybody.`);
+  } else {
+    console.log(`${employees[i].jobTitle} ${employees[i].name} reports to ${employees[i].boss}.`);
+  }
+}*/
