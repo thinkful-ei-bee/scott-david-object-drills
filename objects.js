@@ -312,3 +312,15 @@ testIt();*/
 // console.log('Flour:', loaf.flour);
 // console.log('Water:', loaf.water);
 // console.log('Hydration:', loaf.hydration());
+
+const object1 = {
+  foo: 'hello',
+  bar: 'world',
+  fum: 'hi',
+  quux: 'what is up',
+  spam: 'food',
+};
+
+for (const key in object1) {
+  console.log(key, object1[key]);
+}
