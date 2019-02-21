@@ -352,3 +352,27 @@ for (let i = 0; i < employees.length; i++) {
     console.log(`${employees[i].jobTitle} ${employees[i].name} reports to ${employees[i].boss}.`);
   }
 }*/
+
+// const decode = words => {
+//   const cipher = {
+//     a: 2,
+//     b: 3,
+//     c: 4,
+//     d: 5,
+//   };
+
+//   let result = '';
+//   const keysArray = Object.keys(cipher);
+//   const wordsArray = words.split(' ');
+  
+//   for (let i=0; i<wordsArray.length; i++){
+//     if (keysArray.includes(wordsArray[i][0])){
+//       result += wordsArray[i][cipher[wordsArray[i][0]] - 1];
+//     } else {
+//       result += ' ';
+//     }
+//   }
+//   return result;
+// };
+    
+// console.log(decode('craft block argon meter bells brown croon droop'));
