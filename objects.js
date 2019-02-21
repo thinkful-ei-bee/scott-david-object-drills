@@ -376,3 +376,49 @@ for (let i = 0; i < employees.length; i++) {
 // };
     
 // console.log(decode('craft block argon meter bells brown croon droop'));
+
+function createCharacter(name, nickname, race, origin, atk, def, weapon) {
+  return {
+    name: name,
+    nickname: nickname,
+    race: race,
+    origin: origin,
+    atk: atk,
+    def: def,
+    weapon: weapon,
+    describe: function() {
+      console.log(`${this.name} is a ${this.race} from ${this.origin} who uses a ${weapon}.`);
+    },
+    evaluateFight: function(character) {
+      let x = this.atk - character.def;
+      let y = character.atk - this.def;
+      if (x < 0) {
+        x = 0;
+      }
+      if (y < 0) {
+        y = 0;
+      }
+      return `Your opponent takes ${x} damage and you receive ${y} damage`;
+    },
+  };
+}
+
+const characters = [createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6, 'wizard staff'),
+  createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1, 'ring'),
+  createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2, 'string and barrow blade'),
+  createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8, 'anduril'),
+  createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5, 'bow and arrow')];
+
+characters.push(createCharacter('Arwen Undomiel', 'arie', 'Half-Elf', 'Rivendell', 3, 1, 'Hadhafang'));
+
+let nickDescribe = characters.find(function(element) {
+  return element.nickname === 'aragorn';
+});
+
+console.log(nickDescribe.describe());
+
+const hobbits = characters.filter(race => race.race === 'Hobbit');
+console.log(hobbits);
+
+const attackers = characters.filter(atk => atk.atk > 5);
+console.log(attackers);
