@@ -107,61 +107,98 @@ function makeStudentsReport(data) {
   
 testIt();*/
 
-function enrollInSummerSchool(students) {
-  const summerStudents = [];
-  students.forEach((function(element) {
-    element.status = 'In Summer School';
-    summerStudents.push(element);
-  })
-  );
-  return summerStudents;
+// function enrollInSummerSchool(students) {
+//   const summerStudents = [];
+//   students.forEach((function(element) {
+//     element.status = 'In Summer School';
+//     summerStudents.push(element);
+//   })
+//   );
+//   return summerStudents;
+// }
+
+// function testIt() {
+//   var testData = [
+//     {
+//       name: 'Burt',
+//       status: 'Playing hooky',
+//       course: 'Biology',
+//     },
+//     {
+//       name: 'Melanie',
+//       status: 'Sick',
+//       course: 'Mathematics',
+//     },
+//     {
+//       name: 'Leonard',
+//       status: 'AWOL',
+//       course: 'Computer science',
+//     },
+//   ];
+  
+//   var results = enrollInSummerSchool(testData);
+  
+//   if (!(results && results instanceof Array)) {
+//     console.error('FAILURE: `enrollSummerSchool` must return an array');
+//     return;
+//   }
+//   var result = testData.every(function(student) {
+//     var match = results.find(function(_student) {
+//       return (
+//         _student.name === student.name &&
+//           _student.course === student.course &&
+//           _student.status.toLowerCase() === 'in summer school'
+//       );
+//     });
+//     return match !== undefined;
+//   });
+//   if (!result) {
+//     console.error(
+//       'FAILURE: `enrollSummerSchool` should return ' +
+//           'original key/value pairs for each student, and ' +
+//           'update `status` to "In Summer school": ' +
+//           JSON.stringify(results)
+//     );
+//   } else {
+//     console.info('SUCCESS: `enrollSummerSchool` is working');
+//   }
+// }
+  
+// testIt();
+
+function findById(items, idNum) {
+  for (let i=0; i<items.length; i++){
+    if (idNum === items[i].id){
+      return items[i];
+    }
+  }
 }
 
 function testIt() {
-  var testData = [
-    {
-      name: 'Burt',
-      status: 'Playing hooky',
-      course: 'Biology',
-    },
-    {
-      name: 'Melanie',
-      status: 'Sick',
-      course: 'Mathematics',
-    },
-    {
-      name: 'Leonard',
-      status: 'AWOL',
-      course: 'Computer science',
-    },
+  const testData = [
+    { id: 1, foo: 'bar' },
+    { id: 2, foo: 'bizz' },
+    { id: 3, bang: 'boo' },
   ];
-  
-  var results = enrollInSummerSchool(testData);
-  
-  if (!(results && results instanceof Array)) {
-    console.error('FAILURE: `enrollSummerSchool` must return an array');
+  const result = findById(testData, 3);
+  if (!(result && result !== null && typeof result === 'object')) {
+    console.error('`findById` must return an object');
     return;
   }
-  var result = testData.every(function(student) {
-    var match = results.find(function(_student) {
-      return (
-        _student.name === student.name &&
-          _student.course === student.course &&
-          _student.status.toLowerCase() === 'in summer school'
-      );
-    });
-    return match !== undefined;
-  });
-  if (!result) {
+  if (result.id !== 3) {
     console.error(
-      'FAILURE: `enrollSummerSchool` should return ' +
-          'original key/value pairs for each student, and ' +
-          'update `status` to "In Summer school": ' +
-          JSON.stringify(results)
+      'Asked for item with id of `3` but got back one with id of ' + result.id
     );
-  } else {
-    console.info('SUCCESS: `enrollSummerSchool` is working');
+    return;
   }
+  if (result.bang !== 'boo') {
+    console.error(
+      'Expected all key/value pairs from target object to be returned'
+    );
+    return;
+  }
+  console.log('SUCCESS: `findByid` is working');
 }
   
 testIt();
+  
