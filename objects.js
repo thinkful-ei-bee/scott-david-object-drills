@@ -11,3 +11,20 @@ function createMyObject () {
 }
 
 //console.log(createMyObject());
+
+function updateObject (myObj) {
+  myObj.foo = 'foo';
+  myObj.bar = 'bar';
+  myObj.bizz = 'bizz';
+  myObj.bang = 'bang';
+
+  return myObj;
+}
+
+const updateObj = {
+  foo: 'hello',
+  bar: 'world',
+  bizz: 'coding',
+  bang: 'JS',
+};
+console.log(updateObject(updateObj));
